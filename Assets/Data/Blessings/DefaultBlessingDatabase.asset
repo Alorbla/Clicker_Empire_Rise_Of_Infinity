@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684e600c4524e3640a2bf8cf4b6a0b94, type: 3}
+  m_Name: DefaultBlessingDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::BlessingDatabase
+  blessings:
+  - {fileID: 11400000, guid: 04470faedb7251b43a221cd8c222e139, type: 2}
+  - {fileID: 11400000, guid: 7331bafd81d24e248a797f4197c1549b, type: 2}
+  - {fileID: 11400000, guid: cd0b99e63eb3e7e47a2f102435516548, type: 2}
+  - {fileID: 11400000, guid: 9b7ea4c2f1a39a34bbee3195f27a66b5, type: 2}
+  - {fileID: 11400000, guid: 690220747e860614c98811944b8a957c, type: 2}
+  - {fileID: 11400000, guid: ae2d089b4b8cddc4fa02c138ba737cc1, type: 2}

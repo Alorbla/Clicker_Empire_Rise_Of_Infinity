@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+    <ui:VisualElement class="resource-slot">
+        <ui:Image name="ResourceIcon" class="resource-icon" />
+        <ui:Label name="ResourceName" class="resource-name" text="Resource" />
+        <ui:Label name="ResourceValue" class="resource-value" text="0" />
+    </ui:VisualElement>
+</ui:UXML>

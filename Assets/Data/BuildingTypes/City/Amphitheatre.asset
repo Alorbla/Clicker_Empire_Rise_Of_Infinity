@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020967933d47ceb4ea7acbe18bc0d9eb, type: 3}
+  m_Name: Amphitheatre
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingType
+  id: amphitheatre
+  displayName: Amphitheatre
+  prefab: {fileID: 1596935869250890524, guid: 48a8f996044f3954c8fc5c0c1b11c7ea, type: 3}
+  usePrefabFootprint: 1
+  footprint: {x: 1, y: 1}
+  costs:
+  - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+    amount: 240
+  - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+    amount: 160
+  - resourceType: {fileID: 11400000, guid: 52763ee9c46c14c49ade0be8e590eb5b, type: 2}
+    amount: 140
+  - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+    amount: 140
+  - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+    amount: 80
+  - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+    amount: 60
+  upgradeLevels:
+  - levelName: Level 2
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 200
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 130
+    - resourceType: {fileID: 11400000, guid: 52763ee9c46c14c49ade0be8e590eb5b, type: 2}
+      amount: 180
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 180
+    - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+      amount: 70
+    - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+      amount: 50
+    inputResourcesPerCycle: []
+    amountPerCycle: 2
+    intervalSeconds: 5
+    manualClickAmount: 0
+    storageCapacityBonus: 0
+    storageCapacityBonuses: []
+  - levelName: Level 3
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 340
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 220
+    - resourceType: {fileID: 11400000, guid: 52763ee9c46c14c49ade0be8e590eb5b, type: 2}
+      amount: 260
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 320
+    - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+      amount: 120
+    - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+      amount: 90
+    inputResourcesPerCycle: []
+    amountPerCycle: 3
+    intervalSeconds: 5
+    manualClickAmount: 0
+    storageCapacityBonus: 0
+    storageCapacityBonuses: []
+  - levelName: Level 4
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 560
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 360
+    - resourceType: {fileID: 11400000, guid: 52763ee9c46c14c49ade0be8e590eb5b, type: 2}
+      amount: 380
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 520
+    - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+      amount: 210
+    - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+      amount: 160
+    inputResourcesPerCycle: []
+    amountPerCycle: 5
+    intervalSeconds: 5
+    manualClickAmount: 0
+    storageCapacityBonus: 0
+    storageCapacityBonuses: []
+  - levelName: Level 5
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 900
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 580
+    - resourceType: {fileID: 11400000, guid: 52763ee9c46c14c49ade0be8e590eb5b, type: 2}
+      amount: 560
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 820
+    - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+      amount: 340
+    - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+      amount: 260
+    inputResourcesPerCycle: []
+    amountPerCycle: 7
+    intervalSeconds: 5
+    manualClickAmount: 0
+    storageCapacityBonus: 0
+    storageCapacityBonuses: []
+  orderIndex: 8
+  showInBuildMenu: 1
+  storageCapacityBonus: 0
+  storageCapacityBonuses: []
+  requiredEraIndex: 2
+  maxUnlockedDisplayLevelAtRequiredEra: 0
+  showBuildingPanel: 0
+  detailsBackgroundSprite: {fileID: 21300000, guid: d1a94634bfc062f4e827c50ddd3a9b27, type: 3}
+  researchDatabase: {fileID: 0}
+  blessingDatabase: {fileID: 0}
+  allowProductionPauseControl: 1
+  marketTrades: []
+  enableProximityBonus: 0
+  proximityResource: {fileID: 0}
+  proximityBonusStartDistance: 5
+  proximityBonusMaxDistance: 1
+  proximityMaxBonusPercent: 0.3
+  proximitySearchInterval: 1
+  finiteNodeAction: 0
+  finiteNodeActionLabel: 
+  finiteNodeTargetResource: {fileID: 0}
+  finiteNodeRestoreAmount: 0
+  finiteNodeActionCosts: []
+  debugFreeBuild: 0
+  debugFreeUpgrades: 0

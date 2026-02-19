@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020967933d47ceb4ea7acbe18bc0d9eb, type: 3}
+  m_Name: Lumberjack
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingType
+  id: B_lumberjack
+  displayName: Lumberjack
+  prefab: {fileID: 1596935869250890524, guid: eef1d725fca203e419328390efd2d915, type: 3}
+  usePrefabFootprint: 1
+  footprint: {x: 3, y: 2}
+  costs:
+  - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+    amount: 20
+  - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+    amount: 10
+  upgradeLevels:
+  - levelName: Level 2
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 40
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 20
+    inputResourcesPerCycle: []
+    amountPerCycle: 3
+    intervalSeconds: 2
+    manualClickAmount: 0
+  - levelName: Level 3
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 120
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 60
+    inputResourcesPerCycle: []
+    amountPerCycle: 6
+    intervalSeconds: 2
+    manualClickAmount: 0
+  - levelName: Level 4
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 450
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 280
+    inputResourcesPerCycle: []
+    amountPerCycle: 6
+    intervalSeconds: 2
+    manualClickAmount: 0
+  - levelName: Level 5
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 900
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 560
+    inputResourcesPerCycle: []
+    amountPerCycle: 10
+    intervalSeconds: 2
+    manualClickAmount: 0
+  orderIndex: 0
+  showInBuildMenu: 1
+  storageCapacityBonus: 0
+  requiredEraIndex: 0
+  maxUnlockedDisplayLevelAtRequiredEra: 3
+  showBuildingPanel: 0
+  detailsBackgroundSprite: {fileID: 21300000, guid: 4a467c9be308fd144b2855c72586f082, type: 3}
+  researchDatabase: {fileID: 0}
+  blessingDatabase: {fileID: 0}
+  allowProductionPauseControl: 1
+  marketTrades: []
+  enableProximityBonus: 1
+  proximityResource: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+  proximityBonusStartDistance: 10
+  proximityBonusMaxDistance: 1
+  proximityMaxBonusPercent: 1
+  proximitySearchInterval: 1
+  finiteNodeAction: 1
+  finiteNodeActionLabel: Replant
+  finiteNodeTargetResource: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+  finiteNodeRestoreAmount: 0
+  finiteNodeActionCosts:
+  - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+    amount: 50
+  debugFreeBuild: 0
+  debugFreeUpgrades: 0
+

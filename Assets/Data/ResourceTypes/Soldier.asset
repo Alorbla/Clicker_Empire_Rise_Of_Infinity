@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7e00d6d2194f14bc4c7953e3b34982, type: 3}
+  m_Name: Soldier
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceType
+  id: soldier
+  displayName: Soldier
+  color: {r: 0.509434, g: 0.39649343, b: 0.39649343, a: 1}
+  icon: {fileID: 21300000, guid: 38f511d3436b18648835b26fa9ef819e, type: 3}
+  orderIndex: 3
+  showInHUD: 1
+  baseStorageCapacity: 100

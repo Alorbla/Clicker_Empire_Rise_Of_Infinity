@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb5e2d2856c9e046bb53e38eed672eb, type: 3}
+  m_Name: Smart Planning
+  m_EditorClassIdentifier: Assembly-CSharp::ResearchDefinition
+  id: smart_planning
+  displayName: Smart Planning
+  description: All build+upgrade costs -10%.
+  icon: {fileID: 0}
+  costs:
+  - resourceType: {fileID: 11400000, guid: de7b5dda4e0cae941adf7acaece26176, type: 2}
+    amount: 80
+  prerequisites:
+  - {fileID: 11400000, guid: dbba1c013c1153943962c7b1b6955880, type: 2}
+  effect:
+    type: 2
+    targetResource: {fileID: 0}
+    percentValue: 0.1

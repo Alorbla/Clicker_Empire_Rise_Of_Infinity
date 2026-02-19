@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020967933d47ceb4ea7acbe18bc0d9eb, type: 3}
+  m_Name: Treasury
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingType
+  id: treasury
+  displayName: Treasury
+  prefab: {fileID: 1596935869250890524, guid: 89a3c50395aa8be4a96c1f41eb4f5253, type: 3}
+  usePrefabFootprint: 1
+  footprint: {x: 1, y: 1}
+  costs:
+  - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+    amount: 220
+  - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+    amount: 180
+  - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+    amount: 120
+  - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+    amount: 30
+  - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+    amount: 20
+  upgradeLevels:
+  - levelName: Level 2
+    costs:
+    - resourceType: {fileID: 11400000, guid: 1c29a50cafa049bebcd8c105b52d72dc, type: 2}
+      amount: 280
+    - resourceType: {fileID: 11400000, guid: ea3126497b31be845b5411293159722b, type: 2}
+      amount: 230
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 220
+    - resourceType: {fileID: 11400000, guid: c23feb5175017c941b8801592fe94723, type: 2}
+      amount: 40
+    - resourceType: {fileID: 11400000, guid: bc8c9832265349a4ab908c7bdf7cb5d7, type: 2}
+      amount: 30
+    inputResourcesPerCycle: []
+    amountPerCycle: 0
+    intervalSeconds: 0
+    manualClickAmount: 0
+    storageCapacityBonus: 0
+    storageCapacityBonuses:
+    - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+      amount: 600
+  orderIndex: 0
+  showInBuildMenu: 1
+  storageCapacityBonus: 0
+  storageCapacityBonuses:
+  - resourceType: {fileID: 11400000, guid: f503a90c829a73e488285307d21a9bc0, type: 2}
+    amount: 300
+  requiredEraIndex: 1
+  maxUnlockedDisplayLevelAtRequiredEra: 2
+  showBuildingPanel: 1
+  detailsBackgroundSprite: {fileID: 21300000, guid: 4556400567a4adc47993819ac7005570, type: 3}
+  researchDatabase: {fileID: 0}
+  blessingDatabase: {fileID: 0}
+  allowProductionPauseControl: 0
+  marketTrades: []
+  enableProximityBonus: 0
+  proximityResource: {fileID: 0}
+  proximityBonusStartDistance: 5
+  proximityBonusMaxDistance: 1
+  proximityMaxBonusPercent: 0.3
+  proximitySearchInterval: 1
+  finiteNodeAction: 0
+  finiteNodeActionLabel: 
+  finiteNodeTargetResource: {fileID: 0}
+  finiteNodeRestoreAmount: 0
+  finiteNodeActionCosts: []
+  debugFreeBuild: 0
+  debugFreeUpgrades: 0

@@ -1,0 +1,12 @@
+:root {
+
+}
+
+#cost Label {
+    font-size: 24px;
+}
+
+#cost > VisualElement > VisualElement {
+    width: 36px;
+    height: 36px;
+}

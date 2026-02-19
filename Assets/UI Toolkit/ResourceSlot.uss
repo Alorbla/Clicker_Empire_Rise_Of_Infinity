@@ -1,0 +1,40 @@
+.resource-slot {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 14px;
+    height: 46px;
+    margin-right: 8px;
+    border-radius: 10px;
+    background-color: rgba(18, 14, 10, 0.7);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgba(255, 223, 140, 0.7);
+    border-right-color: rgba(255, 223, 140, 0.7);
+    border-top-color: rgba(255, 223, 140, 0.7);
+    border-bottom-color: rgba(255, 223, 140, 0.7);
+}
+
+.resource-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+}
+
+.resource-name {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    color: rgb(232, 220, 186);
+    margin-right: 8px;
+}
+
+.resource-value {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    -unity-font-style: normal;
+    font-size: 22px;
+    color: rgb(255, 243, 125);
+    unity-font-style: normal;
+}

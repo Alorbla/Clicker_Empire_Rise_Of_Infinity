@@ -1,0 +1,1485 @@
+﻿.hud-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    --top-bar-height: 72px;
+    --bottom-bar-height: 220px;
+    --inspector-width: 320px;
+    --market-panel-gap: 12px;
+    --inspector-width-with-gap: 320px;
+}
+
+.top-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--top-bar-height);
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgba(24, 18, 12, 0.85);
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(255, 223, 140, 0.6);
+}
+
+
+.top-bar-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.top-bar-world-map-button {
+    height: 40px;
+    min-width: 132px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+
+
+.top-bar-actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    min-width: 264px;
+    margin-right: 0;
+}
+
+.top-bar-harmony-label {
+    min-width: 132px;
+    height: 40px;
+    margin-right: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgba(44, 30, 16, 0.9);
+    color: rgb(149, 197, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgba(149, 197, 255, 0.8);
+    border-right-color: rgba(149, 197, 255, 0.8);
+    border-top-color: rgba(149, 197, 255, 0.8);
+    border-bottom-color: rgba(149, 197, 255, 0.8);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    -unity-text-align: middle-center;
+}
+.top-bar-menu-button {
+    height: 40px;
+    min-width: 110px;
+    margin-left: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: rgb(92, 76, 42);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 223, 140);
+    border-right-color: rgb(255, 223, 140);
+    border-top-color: rgb(255, 223, 140);
+    border-bottom-color: rgb(255, 223, 140);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+.runtime-menu-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.runtime-menu-card {
+    width: 320px;
+    padding: 18px;
+    background-color: rgba(30, 22, 14, 0.96);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgba(255, 223, 140, 0.7);
+    border-right-color: rgba(255, 223, 140, 0.7);
+    border-top-color: rgba(255, 223, 140, 0.7);
+    border-bottom-color: rgba(255, 223, 140, 0.7);
+    border-radius: 12px;
+}
+
+.runtime-menu-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 24px;
+    color: rgb(255, 239, 113);
+    margin-bottom: 14px;
+}
+
+
+.runtime-menu-close-button {
+    align-self: flex-end;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 8px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    -unity-text-align: middle-center;
+}
+
+
+.runtime-menu-world-map-button {
+    height: 38px;
+    margin-bottom: 10px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+.runtime-menu-save-button {
+    height: 38px;
+    margin-bottom: 10px;
+    background-color: rgb(68, 122, 62);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(200, 238, 171);
+    border-right-color: rgb(200, 238, 171);
+    border-top-color: rgb(200, 238, 171);
+    border-bottom-color: rgb(200, 238, 171);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+.runtime-menu-export-button {
+    height: 38px;
+    margin-bottom: 10px;
+    background-color: rgb(60, 86, 126);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(178, 205, 242);
+    border-right-color: rgb(178, 205, 242);
+    border-top-color: rgb(178, 205, 242);
+    border-bottom-color: rgb(178, 205, 242);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+
+.runtime-menu-import-button {
+    height: 38px;
+    margin-bottom: 10px;
+    background-color: rgb(74, 96, 142);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(195, 216, 245);
+    border-right-color: rgb(195, 216, 245);
+    border-top-color: rgb(195, 216, 245);
+    border-bottom-color: rgb(195, 216, 245);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+
+.runtime-menu-reset-button {
+    height: 38px;
+    background-color: rgb(138, 52, 42);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 205, 161);
+    border-right-color: rgb(255, 205, 161);
+    border-top-color: rgb(255, 205, 161);
+    border-bottom-color: rgb(255, 205, 161);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+
+.resource-scroll-wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+    height: 100%;
+    flex-direction: column;
+    margin-right: 12px;
+}
+
+.resource-scroll {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.resource-scroll .unity-scroll-view__content-container {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.resource-scroll .unity-scroll-view__horizontal-scroller {
+    display: none;
+    height: 0;
+}
+
+.resource-scroll .unity-scroll-view__vertical-scroller {
+    display: none;
+    width: 0;
+}
+
+.resource-scrollbar {
+    height: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    background-color: rgba(40, 25, 12, 0.95);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.3);
+    border-right-color: rgba(255, 223, 140, 0.3);
+    border-top-color: rgba(255, 223, 140, 0.3);
+    border-bottom-color: rgba(255, 223, 140, 0.3);
+    border-radius: 8px;
+}
+
+.resource-scrollbar-track {
+    flex-grow: 1;
+    margin: 2px;
+    background-color: rgba(90, 60, 30, 0.9);
+    border-radius: 6px;
+}
+
+.resource-scrollbar-thumb {
+    height: 100%;
+    width: 40px;
+    background-color: rgb(176, 118, 64);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.65);
+    border-right-color: rgba(255, 223, 140, 0.65);
+    border-top-color: rgba(255, 223, 140, 0.65);
+    border-bottom-color: rgba(255, 223, 140, 0.65);
+    border-radius: 6px;
+}
+
+.resource-row {
+    flex-direction: row;
+    align-items: center;
+}
+
+.inspector-panel {
+    position: absolute;
+    top: var(--top-bar-height);
+    right: 0;
+    bottom: 0;
+    width: var(--inspector-width);
+    padding: 16px;
+    background-color: rgba(30, 22, 14, 0.9);
+    border-left-width: 2px;
+    border-left-color: rgba(255, 223, 140, 0.6);
+}
+
+.inspector-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.inspector-close {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+}
+
+.inspector-building {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 20px;
+    color: rgb(255, 239, 113);
+    margin-right: 8px;
+}
+
+.inspector-production {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    color: rgb(232, 220, 186);
+    margin-top: 8px;
+    margin-bottom: 12px;
+    white-space: normal;
+}
+
+.townhall-name-section {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding-top: 6px;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 223, 140, 0.2);
+}
+
+.townhall-era-section {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    border-top-width: 1px;
+    border-top-color: rgba(255, 223, 140, 0.2);
+}
+
+.townhall-era-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(255, 239, 113);
+    margin-bottom: 4px;
+}
+
+.townhall-era-harmony {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 13px;
+    color: rgb(232, 220, 186);
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+.townhall-panel-content {
+    margin-bottom: 10px;
+}
+
+.townhall-name-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(255, 239, 113);
+    margin-bottom: 4px;
+}
+
+.townhall-name-field {
+    height: 38px;
+    margin-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(232, 220, 186);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.4);
+    border-right-color: rgba(255, 223, 140, 0.4);
+    border-top-color: rgba(255, 223, 140, 0.4);
+    border-bottom-color: rgba(255, 223, 140, 0.4);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+}
+
+.townhall-name-field .unity-text-field__input {
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    caret-color: rgb(255, 239, 113);
+    unity-text-selection-color: rgba(255, 239, 113, 0.35);
+    background-color: rgba(0, 0, 0, 0.8);
+    unity-background-image-tint-color: rgba(0, 0, 0, 0);
+}
+
+.townhall-name-cost-row {
+    min-height: 22px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+
+.townhall-era-requirement-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.townhall-era-items-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.townhall-era-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 12px;
+    margin-bottom: 4px;
+    min-height: 34px;
+}
+
+.townhall-era-cost-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.townhall-era-amount {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    color: rgb(232, 220, 186);
+    margin-right: 6px;
+}
+
+.townhall-era-resource-name {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+    margin-right: 10px;
+}
+.townhall-era-inline-label {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 12px;
+    color: rgb(232, 220, 186);
+    margin-right: 8px;
+}
+.townhall-name-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    height: 22px;
+}
+
+.townhall-name-cost-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.townhall-name-cost-amount {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+}
+
+.townhall-name-button {
+    height: 30px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+}
+
+.townhall-name-button.is-disabled {
+    background-color: rgb(74, 74, 74);
+    color: rgb(180, 180, 180);
+    border-left-color: rgb(120, 120, 120);
+    border-right-color: rgb(120, 120, 120);
+    border-top-color: rgb(120, 120, 120);
+    border-bottom-color: rgb(120, 120, 120);
+}
+
+.inspector-level {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    color: rgb(255, 239, 113);
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+.inspector-next-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    color: rgb(255, 239, 113);
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.inspector-stats {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    color: rgb(232, 220, 186);
+    margin-bottom: 6px;
+    white-space: normal;
+}
+
+.inspector-cost-row {
+    min-height: 36px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.inspector-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    height: 34px;
+}
+
+.inspector-cost-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.inspector-cost-amount {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    color: rgb(232, 220, 186);
+}
+
+.inspector-action {
+    height: 36px;
+    margin-top: 10px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+}
+
+.inspector-action.is-disabled {
+    background-color: rgb(74, 74, 74);
+    color: rgb(180, 180, 180);
+    border-left-color: rgb(120, 120, 120);
+    border-right-color: rgb(120, 120, 120);
+    border-top-color: rgb(120, 120, 120);
+    border-bottom-color: rgb(120, 120, 120);
+}
+
+.inspector-menu {
+    flex-direction: column;
+}
+
+.inspector-item {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    color: rgb(255, 243, 125);
+    margin-bottom: 10px;
+}
+
+.build-menu {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(20, 15, 10, 0.9);
+    border-top-width: 2px;
+    border-top-color: rgba(255, 223, 140, 0.6);
+}
+
+.build-menu.build-menu-embedded {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    height: 100%;
+    margin-top: 0;
+    border-top-width: 0;
+}
+
+.build-menu .build-menu-title,
+.build-menu .build-menu-close {
+    display: none;
+}
+.build-menu-title {
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    color: rgb(255, 239, 113);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    unity-font-style: bold;
+}
+
+.build-menu-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    z-index: 10;
+}
+
+.build-scroll {
+    height: 100%;
+    margin-top: 36px;
+    overflow: hidden;
+}
+
+.build-scroll .unity-scroll-view__content-container {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.build-grid-scroll {
+    flex-grow: 1;
+}
+
+.build-grid-scroll .unity-scroll-view__content-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.build-grid-wrapper {
+    flex-direction: row;
+    height: 100%;
+}
+
+.build-scrollbar {
+    width: 14px;
+    margin-left: 10px;
+    margin-right: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: rgba(40, 25, 12, 0.95);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.3);
+    border-right-color: rgba(255, 223, 140, 0.3);
+    border-top-color: rgba(255, 223, 140, 0.3);
+    border-bottom-color: rgba(255, 223, 140, 0.3);
+    border-radius: 8px;
+}
+
+.build-scrollbar-track {
+    flex-grow: 1;
+    margin: 2px;
+    background-color: rgba(90, 60, 30, 0.9);
+    border-radius: 6px;
+}
+
+.build-scrollbar-thumb {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(176, 118, 64);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.65);
+    border-right-color: rgba(255, 223, 140, 0.65);
+    border-top-color: rgba(255, 223, 140, 0.65);
+    border-bottom-color: rgba(255, 223, 140, 0.65);
+    border-radius: 6px;
+}
+
+.build-grid-scroll .unity-scroll-view__vertical-scroller {
+    background-color: rgba(40, 25, 12, 0.95);
+}
+
+.build-grid-scroll .unity-scroll-view__vertical-scroller .unity-base-slider__track {
+    background-color: rgba(90, 60, 30, 0.9);
+}
+
+.build-grid-scroll .unity-scroll-view__vertical-scroller .unity-base-slider__dragger,
+.build-grid-scroll .unity-scroll-view__vertical-scroller .unity-base-slider__dragger:hover,
+.build-grid-scroll .unity-scroll-view__vertical-scroller .unity-base-slider__dragger:active {
+    background-color: rgb(176, 118, 64);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.65);
+    border-right-color: rgba(255, 223, 140, 0.65);
+    border-top-color: rgba(255, 223, 140, 0.65);
+    border-bottom-color: rgba(255, 223, 140, 0.65);
+    border-radius: 6px;
+}
+
+.build-card-container,
+.build-card-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 760px;
+    row-gap: 0px;
+    column-gap: 0px;
+}
+
+.build-card-container > *,
+.build-card-grid > * {
+    width: 220px;
+    margin-bottom: 0px;
+}
+
+.build-menu-empty {
+    margin-top: 14px;
+    color: rgb(232, 220, 186);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    text-align: center;
+}
+
+.building-panel {
+    position: absolute;
+    left: 0;
+    right: var(--inspector-width-with-gap);
+    bottom: 0;
+    height: var(--bottom-bar-height);
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(20, 15, 10, 0.9);
+    border-top-width: 2px;
+    border-top-color: rgba(255, 223, 140, 0.6);
+    display: none;
+}
+
+.building-panel-title {
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    color: rgb(255, 239, 113);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    unity-font-style: bold;
+}
+
+.building-panel-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    z-index: 10;
+}
+
+.building-panel-content {
+    margin-top: 36px;
+    height: 100%;
+    padding: 8px 12px 10px;
+}
+
+.building-panel-placeholder {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+    color: rgb(232, 220, 186);
+}
+
+.research-tile {
+    flex-direction: column;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.35);
+    border-right-color: rgba(255, 223, 140, 0.35);
+    border-top-color: rgba(255, 223, 140, 0.35);
+    border-bottom-color: rgba(255, 223, 140, 0.35);
+    border-radius: 10px;
+}
+
+.research-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.research-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.research-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    color: rgb(255, 239, 113);
+}
+
+.research-desc {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+    margin-bottom: 6px;
+    white-space: normal;
+}
+
+.research-cost-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.research-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    height: 22px;
+}
+
+.research-cost-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.research-cost-amount {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+}
+
+.research-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.research-status {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 12px;
+    color: rgb(232, 220, 186);
+}
+
+.research-buy {
+    height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 13px;
+}
+
+.research-buy.is-disabled {
+    background-color: rgb(74, 74, 74);
+    color: rgb(180, 180, 180);
+    border-left-color: rgb(120, 120, 120);
+    border-right-color: rgb(120, 120, 120);
+    border-top-color: rgb(120, 120, 120);
+    border-bottom-color: rgb(120, 120, 120);
+}
+
+.research-locked {
+    opacity: 0.5;
+}
+
+.research-available {
+    opacity: 0.8;
+}
+
+.research-ready {
+    box-shadow: 0 0 0 1px rgba(255, 239, 113, 0.45);
+}
+
+.research-purchased {
+    opacity: 0.65;
+}
+
+.blessing-tile {
+    flex-direction: column;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.35);
+    border-right-color: rgba(255, 223, 140, 0.35);
+    border-top-color: rgba(255, 223, 140, 0.35);
+    border-bottom-color: rgba(255, 223, 140, 0.35);
+    border-radius: 10px;
+}
+
+.blessing-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.blessing-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blessing-title {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    color: rgb(255, 239, 113);
+}
+
+.blessing-desc {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+    margin-bottom: 6px;
+    white-space: normal;
+}
+
+.blessing-cost-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.blessing-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    height: 22px;
+}
+
+.blessing-cost-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blessing-cost-amount {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+    color: rgb(232, 220, 186);
+}
+
+.blessing-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blessing-status {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 12px;
+    color: rgb(232, 220, 186);
+}
+
+.blessing-buy {
+    height: 28px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 13px;
+}
+
+.blessing-buy.is-disabled {
+    background-color: rgb(74, 74, 74);
+    color: rgb(180, 180, 180);
+    border-left-color: rgb(120, 120, 120);
+    border-right-color: rgb(120, 120, 120);
+    border-top-color: rgb(120, 120, 120);
+    border-bottom-color: rgb(120, 120, 120);
+}
+
+.blessing-locked {
+    opacity: 0.5;
+}
+
+.blessing-available {
+    opacity: 0.8;
+}
+
+.blessing-ready {
+    box-shadow: 0 0 0 1px rgba(255, 239, 113, 0.45);
+}
+
+.blessing-purchased {
+    opacity: 0.65;
+}
+
+.trade-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 223, 140, 0.35);
+    border-right-color: rgba(255, 223, 140, 0.35);
+    border-top-color: rgba(255, 223, 140, 0.35);
+    border-bottom-color: rgba(255, 223, 140, 0.35);
+    border-radius: 8px;
+}
+
+.trade-left {
+    flex-direction: row;
+    align-items: center;
+    min-height: 34px;
+    flex-grow: 1;
+}
+
+.trade-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.trade-equals {
+    margin-left: 6px;
+    margin-right: 6px;
+    color: rgb(232, 220, 186);
+    font-size: 14px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+}
+
+.trade-info {
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    color: rgb(232, 220, 186);
+}
+
+.trade-buttons {
+    flex-direction: row;
+    align-items: center;
+}
+
+.trade-button {
+    height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 8px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 14px;
+}
+
+.trade-button.is-disabled {
+    background-color: rgb(74, 74, 74);
+    color: rgb(180, 180, 180);
+    border-left-color: rgb(120, 120, 120);
+    border-right-color: rgb(120, 120, 120);
+    border-top-color: rgb(120, 120, 120);
+    border-bottom-color: rgb(120, 120, 120);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.building-details-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    align-items: stretch;
+    justify-content: stretch;
+    background-color: rgba(8, 6, 4, 0.78);
+}
+
+.building-details-card {
+    position: relative;
+    flex-grow: 1;
+}
+
+.building-details-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    -unity-background-scale-mode: scale-and-crop;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.building-details-topbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 64px;
+    padding-left: 14px;
+    padding-right: 14px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(18, 12, 8, 0.75);
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(255, 223, 140, 0.5);
+}
+
+.building-details-title {
+    color: rgb(255, 239, 113);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 20px;
+}
+
+.building-details-close-button {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    -unity-text-align: middle-center;
+}
+
+.building-details-bottom-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 88px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 8, 6, 0.78);
+    border-top-width: 2px;
+    border-top-color: rgba(255, 223, 140, 0.45);
+}
+
+.building-details-bottom-text {
+    color: rgb(242, 232, 196);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    -unity-text-align: middle-center;
+}
+.building-details-action-button {
+    min-width: 220px;
+    height: 36px;
+    margin-top: 6px;
+    background-color: rgb(146, 96, 47);
+    color: rgb(255, 239, 113);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-top-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-radius: 10px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+}
+
+.building-details-action-cost-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.building-details-action-cost-item {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 6px;
+}
+
+.building-details-action-cost-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.building-details-action-cost-amount {
+    color: rgb(242, 232, 196);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 16px;
+}
+
+.talents-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    align-items: stretch;
+    justify-content: stretch;
+    background-color: rgba(8, 6, 4, 0.78);
+}
+
+.talents-card {
+    position: relative;
+    flex-grow: 1;
+}
+
+.talents-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    -unity-background-scale-mode: scale-and-crop;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.talents-topbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 64px;
+    padding-left: 14px;
+    padding-right: 14px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(18, 12, 8, 0.75);
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(255, 223, 140, 0.5);
+}
+
+.talents-title {
+    color: rgb(255, 239, 113);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 20px;
+}
+
+.talents-close-button {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: rgb(255, 239, 113);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgba(255, 239, 113, 0.8);
+    border-right-color: rgba(255, 239, 113, 0.8);
+    border-top-color: rgba(255, 239, 113, 0.8);
+    border-bottom-color: rgba(255, 239, 113, 0.8);
+    border-radius: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 15px;
+    -unity-text-align: middle-center;
+}
+
+.talents-bottom-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 88px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 8, 6, 0.78);
+    border-top-width: 2px;
+    border-top-color: rgba(255, 223, 140, 0.45);
+}
+
+.talents-bottom-text {
+    color: rgb(242, 232, 196);
+    -unity-font-definition: url("project://database/Assets/Fonts/Noto_Serif/static/NotoSerif-Regular.ttf");
+    font-size: 18px;
+    -unity-text-align: middle-center;
+}
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+    <ui:VisualElement class="build-card">
+        <ui:Label name="BuildingName" class="build-name" text="Building" />
+        <ui:VisualElement name="CostRow" class="cost-row" />
+        <ui:Button name="BuildButton" class="build-button" text="BUILD" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,129 @@
+﻿<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:ui="UnityEngine.UIElements"
+         noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd">
+    <Style src="GameHUD.uss" />
+    <Style src="ResourceSlot.uss" />
+    <Style src="BuildCard.uss" />
+
+    <ui:VisualElement class="hud-root" picking-mode="Ignore">
+        <ui:VisualElement name="TopBar" class="top-bar">
+            <ui:VisualElement name="TopBarContent" class="top-bar-content" style="justify-content: flex-start;">
+            <ui:VisualElement name="ResourceScrollWrapper" class="resource-scroll-wrapper" picking-mode="Ignore" style="flex-shrink: 1; flex-basis: 0; min-width: 0; margin-right: 12px;">
+                <ui:ScrollView name="ResourceScroll" class="resource-scroll" mode="Horizontal" picking-mode="Position"
+                               horizontalScrollerVisibility="Hidden" verticalScrollerVisibility="Hidden">
+                    <ui:VisualElement name="ResourceRow" class="resource-row" />
+                </ui:ScrollView>
+                <ui:VisualElement name="ResourceScrollbar" class="resource-scrollbar" picking-mode="Ignore">
+                    <ui:VisualElement name="ResourceScrollbarTrack" class="resource-scrollbar-track" picking-mode="Ignore">
+                        <ui:VisualElement name="ResourceScrollbarThumb" class="resource-scrollbar-thumb" picking-mode="Position" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="TopBarActions" class="top-bar-actions" style="justify-content: flex-end; flex-shrink: 0; min-width: 264px;">
+
+                    <ui:Label name="HarmonyLabel" class="top-bar-harmony-label" text="Harmony 0%" />
+                    <ui:Button name="MenuButton" class="top-bar-menu-button" text="Menu" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+
+        <ui:VisualElement name="RuntimeMenuPanel" class="runtime-menu-panel" picking-mode="Position">
+            <ui:VisualElement class="runtime-menu-card">
+                <ui:Button name="RuntimeMenuCloseButton" class="runtime-menu-close-button" text="X" />
+                <ui:Label class="runtime-menu-title" text="Menu" />
+                <ui:Button name="WorldMapButton" class="runtime-menu-world-map-button" text="World Map" />
+                <ui:Button name="TalentsButton" class="runtime-menu-world-map-button" text="Talents" />
+                <ui:Button name="RuntimeMenuSaveButton" class="runtime-menu-save-button" text="Save" />
+                <ui:Button name="RuntimeMenuExportButton" class="runtime-menu-export-button" text="Export Save" />
+                <ui:Button name="RuntimeMenuImportButton" class="runtime-menu-import-button" text="Import Save" />
+                <ui:Button name="RuntimeMenuResetProgressButton" class="runtime-menu-reset-button" text="Reset Progress" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="InspectorPanel" class="inspector-panel" picking-mode="Position">
+            <ui:VisualElement class="inspector-header">
+                <ui:Label name="SelectedBuildingName" class="inspector-building" text="(none)" />
+                <ui:Button name="InspectorCloseButton" class="inspector-close" text="X" picking-mode="Position" />
+            </ui:VisualElement>
+            <ui:Label name="ProductionInfo" class="inspector-production" text="" />
+            <ui:VisualElement name="TownHallNameSection" class="townhall-name-section">
+                <ui:Label name="TownHallNameTitle" class="townhall-name-title" text="City name" />
+                <ui:TextField name="TownHallNameField" class="townhall-name-field" value="" />
+                <ui:VisualElement name="TownHallNameCostRow" class="townhall-name-cost-row" />
+                <ui:Button name="TownHallNameButton" class="townhall-name-button" text="Name City" />
+            </ui:VisualElement>
+            <ui:Button name="OpenBuildMenuButton" class="inspector-action" text="BUILD MENU" />
+            <ui:Button name="TownHallDetailsButton" class="inspector-action" text="DETAILS" />
+            <ui:Button name="TownHallNextEraButton" class="inspector-action" text="Next Era" />
+            <ui:VisualElement name="TownHallEraRequirementsSection" class="townhall-era-section">
+                <ui:Label name="TownHallEraRequirementsTitle" class="townhall-era-title" text="Next Era Requirements" />
+                <ui:VisualElement name="TownHallEraConsumeRow" class="townhall-name-cost-row" />
+                <ui:VisualElement name="TownHallEraKeepRow" class="townhall-name-cost-row" />
+                <ui:Label name="TownHallEraHarmonyRequirementLabel" class="townhall-era-harmony" text="" />
+            </ui:VisualElement>
+            <ui:Button name="UpgradeButton" class="inspector-action" text="UPGRADE" />
+            <ui:Button name="ProductionToggleButton" class="inspector-action" text="PAUSE PRODUCTION" />
+            <ui:Label name="LevelInfo" class="inspector-level" text="" />
+            <ui:Label name="NextLevelTitle" class="inspector-next-title" text="Next level:" />
+            <ui:Label name="NextStatsInfo" class="inspector-stats" text="" />
+            <ui:VisualElement name="NextCostRow" class="inspector-cost-row" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="BuildingPanel" class="building-panel" picking-mode="Position">
+            <ui:Label name="BuildingPanelTitle" class="building-panel-title" text="Building" />
+            <ui:Button name="BuildingPanelCloseButton" class="building-panel-close" text="X" picking-mode="Position" />
+            <ui:VisualElement name="BuildingPanelContent" class="building-panel-content">
+                <ui:VisualElement name="TownHallPanelContent" class="townhall-panel-content">
+                    <ui:VisualElement name="BuildGridWrapper" class="build-grid-wrapper" picking-mode="Position">
+                        <ui:ScrollView name="BuildScroll" class="build-grid-scroll" mode="Vertical"
+                                       horizontalScrollerVisibility="Hidden" verticalScrollerVisibility="Hidden">
+                            <ui:VisualElement name="BuildCardContainer" class="build-card-grid" />
+                        </ui:ScrollView>
+                        <ui:VisualElement name="BuildScrollbar" class="build-scrollbar" picking-mode="Ignore">
+                            <ui:VisualElement name="BuildScrollbarTrack" class="build-scrollbar-track" picking-mode="Position">
+                                <ui:VisualElement name="BuildScrollbarThumb" class="build-scrollbar-thumb" picking-mode="Position" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:Label name="BuildMenuEmptyLabel" class="build-menu-empty" text="All available buildings already build!" />
+                </ui:VisualElement>
+                <ui:Label name="BuildingPanelPlaceholder" class="building-panel-placeholder" text="Building panel" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="BuildingDetailsPanel" class="building-details-panel" picking-mode="Position">
+            <ui:VisualElement class="building-details-card">
+                <ui:VisualElement name="BuildingDetailsBackground" class="building-details-background" />
+                <ui:VisualElement class="building-details-topbar">
+                    <ui:Label name="BuildingDetailsTitle" class="building-details-title" text="Details" />
+                    <ui:Button name="BuildingDetailsCloseButton" class="building-details-close-button" text="X" />
+                </ui:VisualElement>
+                <ui:VisualElement class="building-details-bottom-panel">
+                    <ui:Label name="BuildingDetailsBottomText" class="building-details-bottom-text" text="More Content Coming Soon" />
+                    <ui:Button name="BuildingDetailsNodeActionButton" class="building-details-action-button" text="Action" />
+                    <ui:VisualElement name="BuildingDetailsNodeActionCostRow" class="building-details-action-cost-row" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="TalentsPanel" class="talents-panel" picking-mode="Position">
+            <ui:VisualElement class="talents-card">
+                <ui:VisualElement name="TalentsBackground" class="talents-background" />
+                <ui:VisualElement class="talents-topbar">
+                    <ui:Label name="TalentsTitle" class="talents-title" text="Talents" />
+                    <ui:Button name="TalentsCloseButton" class="talents-close-button" text="X" />
+                </ui:VisualElement>
+                <ui:VisualElement class="talents-bottom-panel">
+                    <ui:Label class="talents-bottom-text" text="Talent Tree Coming Soon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
+
+
+
+
+
+

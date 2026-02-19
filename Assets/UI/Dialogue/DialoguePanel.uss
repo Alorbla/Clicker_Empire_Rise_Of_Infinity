@@ -1,0 +1,83 @@
+.dialogue-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 220px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.dialogue-card {
+    width: 90%;
+    height: 180px;
+    background-color: rgba(20, 14, 8, 0.9);
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-top-color: rgb(235, 210, 140);
+    border-right-color: rgb(235, 210, 140);
+    border-bottom-color: rgb(235, 210, 140);
+    border-left-color: rgb(235, 210, 140);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.dialogue-portrait {
+    position: absolute;
+    bottom: 190px;
+    left: 140px;
+    width: 220px;
+    height: 220px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    margin-left: 0;
+    unity-background-image-tint-color: rgb(255, 255, 255);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dialogue-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: rgb(255, 243, 200);
+    unity-font-style: bold;
+    font-size: 22px;
+    unity-text-align: upper-left;
+    margin-right: 16px;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.dialogue-next {
+    width: 120px;
+    height: 44px;
+    align-self: flex-end;
+    background-color: rgb(146, 96, 47);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-color: rgb(255, 239, 113);
+    border-right-color: rgb(255, 239, 113);
+    border-bottom-color: rgb(255, 239, 113);
+    border-left-color: rgb(255, 239, 113);
+    color: rgb(255, 239, 113);
+    unity-font-style: bold;
+    font-size: 22px;
+}

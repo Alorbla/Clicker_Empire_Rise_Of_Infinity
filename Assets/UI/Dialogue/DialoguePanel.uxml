@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Dialogue/DialoguePanel.uss" />
+    <ui:VisualElement name="dialogueRoot" class="dialogue-root">
+        <ui:VisualElement name="portrait" class="dialogue-portrait" />
+        <ui:VisualElement name="dialogueCard" class="dialogue-card">
+            <ui:Label name="dialogueText" class="dialogue-text" text="Dialogue goes here." />
+            <ui:Button name="nextButton" class="dialogue-next" text="Next" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

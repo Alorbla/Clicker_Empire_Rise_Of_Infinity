@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d08586f16e43e47b93ae3cb3b6b6ca, type: 3}
+  m_Name: WorldMapConfig
+  m_EditorClassIdentifier: Assembly-CSharp::WorldMapConfig
+  worldType: 1
+  landCoverage: 0.506
+  autoApplyWorldTypePreset: 1
+  mapWidth: 64
+  mapHeight: 48
+  useRandomSeed: 1
+  seed: -1826859789
+  elevationScale: 26
+  moistureScale: 20
+  ridgeScale: 11
+  forestPatchScale: 8
+  falloffStrength: 0.34
+  numContinents: 2
+  continentSpread: 0.417
+  islandScaleMultiplier: 1.5
+  extraWaterBias: 0.084
+  waterThreshold: 0.492
+  mountainThreshold: 0.806
+  ridgeThreshold: 0.62
+  desertMoistureThreshold: 0.27
+  forestMoistureThreshold: 0.743
+  forestPatchThreshold: 0.48
+  useRadialFalloff: 1
+  useSmoothing: 1
+  useCoastDrynessRule: 1
+  useForestPatchBreakup: 1
+  useDesertAdjacencyPenalty: 1
+  coastWaterDistanceMax: 3
+  desertMaxElevation: 0.695
+  maxDesertNeighborsForForest: 1
+  smoothingPasses: 1
+  plainsPrefab: {fileID: 8862268987828933330, guid: 6f8705a125ca3c745bc25c074fafe960, type: 3}
+  waterPrefab: {fileID: 8862268987828933330, guid: e6ce821bafc209a4c92f084500d0184d, type: 3}
+  desertPrefab: {fileID: 8862268987828933330, guid: fe399e108abe6ec4abf4080f0fd02914, type: 3}
+  forestPrefab: {fileID: 8862268987828933330, guid: 8dbcda1d9ca17ed4e9c3d095777cec61, type: 3}
+  mountainsPrefab: {fileID: 8862268987828933330, guid: d19ad4f9981755f4b88c90ca4477e57b, type: 3}
+  villagePrefab: {fileID: 8862268987828933330, guid: cf501898da011c245931e02c82e69f18, type: 3}
+  lastPresetWorldType: 1
