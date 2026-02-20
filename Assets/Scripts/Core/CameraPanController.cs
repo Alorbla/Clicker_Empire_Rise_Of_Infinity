@@ -314,12 +314,17 @@ public class CameraPanController : MonoBehaviour
     private static bool ShouldIgnoreMouseWheelZoom(Vector2 screenPosition)
     {
         var hud = GameHUDController.Instance;
-        if (hud == null)
+        if (hud != null && hud.IsPointerOverHudUI(screenPosition))
         {
-            return false;
+            return true;
         }
 
-        return hud.IsPointerOverResourceBar(screenPosition);
+        if (hud != null && hud.IsPointerOverResourceBar(screenPosition))
+        {
+            return true;
+        }
+
+        return IsPointerOverUI();
     }
 
     private static bool IsPointerOverUI()

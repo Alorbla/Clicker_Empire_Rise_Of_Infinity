@@ -62,8 +62,10 @@ public class GameHUDController : MonoBehaviour
     private VisualElement buildScrollThumb;
     private bool isDraggingScrollThumb;
     private float dragPointerOffset;
+    private int buildScrollThumbPointerId = -1;
     private bool isDraggingResourceScrollThumb;
     private float resourceDragPointerOffset;
+    private int resourceScrollThumbPointerId = -1;
     private VisualElement inspectorPanel;
     private VisualElement buildingPanel;
     private Label inspectorBuildingLabel;
@@ -439,6 +441,7 @@ public class GameHUDController : MonoBehaviour
 
     private void OnDisable()
     {
+        ReleaseScrollbarPointerCaptures();
         SceneManager.sceneLoaded -= HandleSceneLoadedRefresh;
         var manager = ResourceManager.Instance;
         if (manager != null)
@@ -751,7 +754,8 @@ public class GameHUDController : MonoBehaviour
 
         buildScrollThumb.RegisterCallback<PointerDownEvent>(OnScrollbarThumbDown);
         buildScrollThumb.RegisterCallback<PointerMoveEvent>(OnScrollbarThumbMove);
-        buildScrollThumb.RegisterCallback<PointerUpEvent>(_ => isDraggingScrollThumb = false);
+        buildScrollThumb.RegisterCallback<PointerUpEvent>(OnScrollbarThumbUp);
+        buildScrollThumb.RegisterCallback<PointerCaptureOutEvent>(OnScrollbarThumbCaptureOut);
 
         buildScrollTrack.RegisterCallback<PointerDownEvent>(OnScrollbarTrackDown);
     }
@@ -797,7 +801,12 @@ public class GameHUDController : MonoBehaviour
     private void OnScrollbarThumbDown(PointerDownEvent evt)
     {
         isDraggingScrollThumb = true;
-        dragPointerOffset = evt.localPosition.y;
+        float pointerTrackY = buildScrollTrack != null
+            ? buildScrollTrack.WorldToLocal(evt.position).y
+            : evt.localPosition.y;
+        float currentThumbTop = buildScrollThumb != null ? buildScrollThumb.layout.y : 0f;
+        dragPointerOffset = pointerTrackY - currentThumbTop;
+        buildScrollThumbPointerId = evt.pointerId;
         buildScrollThumb.CapturePointer(evt.pointerId);
         evt.StopPropagation();
     }
@@ -812,13 +821,14 @@ public class GameHUDController : MonoBehaviour
         float trackHeight = buildScrollTrack.layout.height;
         float thumbHeight = buildScrollThumb.layout.height;
         float maxThumbTop = Mathf.Max(0f, trackHeight - thumbHeight);
-        float desiredTop = Mathf.Clamp(evt.localPosition.y - dragPointerOffset, 0f, maxThumbTop);
+        float pointerTrackY = buildScrollTrack.WorldToLocal(evt.position).y;
+        float desiredTop = Mathf.Clamp(pointerTrackY - dragPointerOffset, 0f, maxThumbTop);
 
         float viewportHeight = buildScroll.contentViewport.layout.height;
         float contentHeight = buildScroll.contentContainer.layout.height;
         float maxScroll = Mathf.Max(0f, contentHeight - viewportHeight);
 
-        float scrollY = maxScroll <= 0f ? 0f : (desiredTop / maxThumbTop) * maxScroll;
+        float scrollY = (maxScroll <= 0f || maxThumbTop <= 0f) ? 0f : (desiredTop / maxThumbTop) * maxScroll;
         buildScroll.scrollOffset = new Vector2(0f, scrollY);
         UpdateCustomScrollbar();
         evt.StopPropagation();
@@ -841,10 +851,32 @@ public class GameHUDController : MonoBehaviour
         float contentHeight = buildScroll.contentContainer.layout.height;
         float maxScroll = Mathf.Max(0f, contentHeight - viewportHeight);
 
-        float scrollY = maxScroll <= 0f ? 0f : (desiredTop / maxThumbTop) * maxScroll;
+        float scrollY = (maxScroll <= 0f || maxThumbTop <= 0f) ? 0f : (desiredTop / maxThumbTop) * maxScroll;
         buildScroll.scrollOffset = new Vector2(0f, scrollY);
         UpdateCustomScrollbar();
         evt.StopPropagation();
+    }
+
+    private void OnScrollbarThumbUp(PointerUpEvent evt)
+    {
+        isDraggingScrollThumb = false;
+        if (buildScrollThumb != null && buildScrollThumb.HasPointerCapture(evt.pointerId))
+        {
+            buildScrollThumb.ReleasePointer(evt.pointerId);
+        }
+
+        if (buildScrollThumbPointerId == evt.pointerId)
+        {
+            buildScrollThumbPointerId = -1;
+        }
+
+        evt.StopPropagation();
+    }
+
+    private void OnScrollbarThumbCaptureOut(PointerCaptureOutEvent _)
+    {
+        isDraggingScrollThumb = false;
+        buildScrollThumbPointerId = -1;
     }
 
     private void SetupCustomResourceScrollbar()
@@ -864,7 +896,7 @@ public class GameHUDController : MonoBehaviour
         resourceScrollThumb.RegisterCallback<PointerDownEvent>(OnResourceScrollbarThumbDown);
         resourceScrollThumb.RegisterCallback<PointerMoveEvent>(OnResourceScrollbarThumbMove);
         resourceScrollThumb.RegisterCallback<PointerUpEvent>(OnResourceScrollbarThumbUp);
-        resourceScrollThumb.RegisterCallback<PointerCaptureOutEvent>(_ => isDraggingResourceScrollThumb = false);
+        resourceScrollThumb.RegisterCallback<PointerCaptureOutEvent>(OnResourceScrollbarThumbCaptureOut);
 
         // Track is non-interactive to avoid blocking top-bar/world clicks.
 
@@ -915,7 +947,12 @@ public class GameHUDController : MonoBehaviour
     private void OnResourceScrollbarThumbDown(PointerDownEvent evt)
     {
         isDraggingResourceScrollThumb = true;
-        resourceDragPointerOffset = evt.localPosition.x;
+        float pointerTrackX = resourceScrollTrack != null
+            ? resourceScrollTrack.WorldToLocal(evt.position).x
+            : evt.localPosition.x;
+        float currentThumbLeft = resourceScrollThumb != null ? resourceScrollThumb.layout.x : 0f;
+        resourceDragPointerOffset = pointerTrackX - currentThumbLeft;
+        resourceScrollThumbPointerId = evt.pointerId;
         resourceScrollThumb.CapturePointer(evt.pointerId);
         evt.StopPropagation();
     }
@@ -930,13 +967,14 @@ public class GameHUDController : MonoBehaviour
         float trackWidth = resourceScrollTrack.layout.width;
         float thumbWidth = resourceScrollThumb.layout.width;
         float maxThumbLeft = Mathf.Max(0f, trackWidth - thumbWidth);
-        float desiredLeft = Mathf.Clamp(evt.localPosition.x - resourceDragPointerOffset, 0f, maxThumbLeft);
+        float pointerTrackX = resourceScrollTrack.WorldToLocal(evt.position).x;
+        float desiredLeft = Mathf.Clamp(pointerTrackX - resourceDragPointerOffset, 0f, maxThumbLeft);
 
         float viewportWidth = resourceScroll.contentViewport.layout.width;
         float contentWidth = resourceScroll.contentContainer.layout.width;
         float maxScroll = Mathf.Max(0f, contentWidth - viewportWidth);
 
-        float scrollX = maxScroll <= 0f ? 0f : (desiredLeft / maxThumbLeft) * maxScroll;
+        float scrollX = (maxScroll <= 0f || maxThumbLeft <= 0f) ? 0f : (desiredLeft / maxThumbLeft) * maxScroll;
         resourceScroll.scrollOffset = new Vector2(scrollX, resourceScroll.scrollOffset.y);
         UpdateCustomResourceScrollbar();
         evt.StopPropagation();
@@ -962,7 +1000,7 @@ public class GameHUDController : MonoBehaviour
         float contentWidth = resourceScroll.contentContainer.layout.width;
         float maxScroll = Mathf.Max(0f, contentWidth - viewportWidth);
 
-        float scrollX = maxScroll <= 0f ? 0f : (desiredLeft / maxThumbLeft) * maxScroll;
+        float scrollX = (maxScroll <= 0f || maxThumbLeft <= 0f) ? 0f : (desiredLeft / maxThumbLeft) * maxScroll;
         resourceScroll.scrollOffset = new Vector2(scrollX, resourceScroll.scrollOffset.y);
         UpdateCustomResourceScrollbar();
         evt.StopPropagation();
@@ -1009,7 +1047,35 @@ public class GameHUDController : MonoBehaviour
             resourceScrollThumb.ReleasePointer(evt.pointerId);
         }
 
+        if (resourceScrollThumbPointerId == evt.pointerId)
+        {
+            resourceScrollThumbPointerId = -1;
+        }
+
         evt.StopPropagation();
+    }
+
+    private void OnResourceScrollbarThumbCaptureOut(PointerCaptureOutEvent _)
+    {
+        isDraggingResourceScrollThumb = false;
+        resourceScrollThumbPointerId = -1;
+    }
+
+    private void ReleaseScrollbarPointerCaptures()
+    {
+        isDraggingScrollThumb = false;
+        if (buildScrollThumb != null && buildScrollThumbPointerId >= 0 && buildScrollThumb.HasPointerCapture(buildScrollThumbPointerId))
+        {
+            buildScrollThumb.ReleasePointer(buildScrollThumbPointerId);
+        }
+        buildScrollThumbPointerId = -1;
+
+        isDraggingResourceScrollThumb = false;
+        if (resourceScrollThumb != null && resourceScrollThumbPointerId >= 0 && resourceScrollThumb.HasPointerCapture(resourceScrollThumbPointerId))
+        {
+            resourceScrollThumb.ReleasePointer(resourceScrollThumbPointerId);
+        }
+        resourceScrollThumbPointerId = -1;
     }
 
     private void BuildResourceBar()
@@ -2861,6 +2927,48 @@ public class GameHUDController : MonoBehaviour
 
         return false;
     }
+
+    public bool IsPointerOverHudUI(Vector2 screenPosition)
+    {
+        if (root == null || root.panel == null)
+        {
+            return false;
+        }
+
+        var panel = root.panel;
+        Vector2 panelPositionA = RuntimePanelUtils.ScreenToPanel(panel, screenPosition);
+        if (IsInteractiveElementPicked(panel, panelPositionA))
+        {
+            return true;
+        }
+
+        Vector2 flippedScreen = new Vector2(screenPosition.x, Screen.height - screenPosition.y);
+        Vector2 panelPositionB = RuntimePanelUtils.ScreenToPanel(panel, flippedScreen);
+        return IsInteractiveElementPicked(panel, panelPositionB);
+    }
+
+    private static bool IsInteractiveElementPicked(IPanel panel, Vector2 panelPosition)
+    {
+        if (panel == null)
+        {
+            return false;
+        }
+
+        VisualElement picked = panel.Pick(panelPosition);
+        while (picked != null)
+        {
+            if (picked.pickingMode == PickingMode.Position &&
+                picked.resolvedStyle.display != DisplayStyle.None &&
+                picked.resolvedStyle.visibility == Visibility.Visible)
+            {
+                return true;
+            }
+
+            picked = picked.parent;
+        }
+
+        return false;
+    }
     private int ResolveManualClickAmount()
     {
         var manualSystem = ManualClickSystem.Instance;
@@ -2947,6 +3055,7 @@ public class GameHUDController : MonoBehaviour
 
     private void HideBuildMenu()
     {
+        ReleaseScrollbarPointerCaptures();
         if (buildMenu != null)
         {
             buildMenu.style.display = DisplayStyle.None;
@@ -2955,6 +3064,7 @@ public class GameHUDController : MonoBehaviour
 
     private void HideAllPanels()
     {
+        ReleaseScrollbarPointerCaptures();
         if (inspectorPanel != null)
         {
             inspectorPanel.style.display = DisplayStyle.None;
